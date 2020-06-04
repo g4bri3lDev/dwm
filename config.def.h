@@ -78,7 +78,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_o,      incnmaster,     {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_o,      incnmaster,     {.i = -1 } },
+	{ MODKEY,	                XK_o,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_space,  zoom,           {0} },
@@ -108,6 +108,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_x,	   spawn,	   SHCMD("slock") },
 	{ MODKEY,			XK_e,	   spawn,	   SHCMD("emacs") },
 	{ MODKEY,			XK_r,	   spawn,	   SHCMD("st -e vifm") },
+	{ MODKEY,			XK_w,	   spawn,	   SHCMD($BROWSER) },
 
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
