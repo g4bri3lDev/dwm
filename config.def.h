@@ -83,7 +83,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_space,  zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
+	{ MODKEY,	                XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} }, //tile
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} }, //null
 	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[2]} }, //monocle
@@ -108,7 +108,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_x,	   spawn,	   SHCMD("slock") },
 	{ MODKEY,			XK_e,	   spawn,	   SHCMD("emacs") },
 	{ MODKEY,			XK_r,	   spawn,	   SHCMD("st -e vifm") },
-	{ MODKEY,			XK_w,	   spawn,	   SHCMD($BROWSER) },
+	{ MODKEY,			XK_w,	   spawn,	   SHCMD("google-chrome-stable") },
 
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
