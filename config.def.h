@@ -53,6 +53,8 @@ static const Layout layouts[] = {
  	{ "[\\]",      dwindle },
 	{ "|M|",      centeredmaster },
 	{ ">M>",      centeredfloatingmaster },
+	{ "TTT",      bstack },
+	{ "===",      bstackhoriz },
 };
 
 /* key definitions */
@@ -93,6 +95,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_y,      setlayout,      {.v = &layouts[4]} }, //dwindle
 	{ MODKEY,                       XK_i,      setlayout,      {.v = &layouts[5]} }, //centeredmaster
 	{ MODKEY|ShiftMask,             XK_i,      setlayout,      {.v = &layouts[6]} }, //centeredfloadtingmaster
+	{ MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[7]} }, //bstack
+	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[8]} }, //bstackhoriz
 	/*{ MODKEY,                       XK_space,  setlayout,      {0} },*/
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_s,      togglesticky,   {0} },
@@ -123,7 +127,7 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioRewind,	spawn,		SHCMD("playerctl --player=vlc,spotifyd,spotify position 10-") },
 	{ 0, XF86XK_AudioForward,	spawn,		SHCMD("playerctl --player=vlc,spotifyd,spotify position 10+") },
 	{ MODKEY, XK_p,             spawn,      SHCMD("playerctl --player=vlc,spotifyd,spotify play-pause; kill -45 $(pidof dwmblocks)")},
-	{ MODKEY, XK_bracketleft,   spawn,      SHCMD("playerctl --player=vlc,spotifyd,spotify previous; kill -45 $(pidof dwmblocks))"},
+	{ MODKEY, XK_bracketleft,   spawn,      SHCMD("playerctl --player=vlc,spotifyd,spotify previous; kill -45 $(pidof dwmblocks)")},
 	{ MODKEY, XK_bracketright,	spawn,		SHCMD("playerctl --player=vlc,spotifyd,spotify next; kill -45 $(pidof dwmblocks)") },
 	{ 0, XF86XK_Calculator,		spawn,		SHCMD("st -e bc -l") },
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("synclient | grep 'TouchpadOff.*1' && ssynclient TouchpadOff=0) || synclient TouchpadOff=1") },
