@@ -74,6 +74,7 @@ static const char *termcmd[]  = { "st", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_grave,  spawn,          SHCMD("dmenuunicode")},
 	{ MODKEY,	             	XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -121,6 +122,9 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioStop,		spawn,		SHCMD("playerctl --player=vlc,spotifyd,spotify stop; kill -45 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioRewind,	spawn,		SHCMD("playerctl --player=vlc,spotifyd,spotify position 10-") },
 	{ 0, XF86XK_AudioForward,	spawn,		SHCMD("playerctl --player=vlc,spotifyd,spotify position 10+") },
+	{ MODKEY, XK_p,             spawn,      SHCMD("playerctl --player=vlc,spotifyd,spotify play-pause; kill -45 $(pidof dwmblocks)")},
+	{ MODKEY, XK_bracketleft,   spawn,      SHCMD("playerctl --player=vlc,spotifyd,spotify previous; kill -45 $(pidof dwmblocks))"},
+	{ MODKEY, XK_bracketright,	spawn,		SHCMD("playerctl --player=vlc,spotifyd,spotify next; kill -45 $(pidof dwmblocks)") },
 	{ 0, XF86XK_Calculator,		spawn,		SHCMD("st -e bc -l") },
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("synclient | grep 'TouchpadOff.*1' && ssynclient TouchpadOff=0) || synclient TouchpadOff=1") },
 	{ 0, XF86XK_TouchpadOff,	spawn,		SHCMD("synclient TouchpadOff=1") },
