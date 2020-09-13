@@ -106,7 +106,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
 	{ MODKEY,			XK_z,	   incrgaps,	   {.i = +3 } },
 	{ MODKEY,			XK_x,	   incrgaps,	   {.i = -3 } },
 	{ MODKEY|ShiftMask,		XK_d,	   togglegaps,	   {0} },
@@ -136,12 +135,16 @@ static Key keys[] = {
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 10") },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 10") },
 
+	{ MODKEY,			XK_F2,	   spawn,	   SHCMD("exit") },
 	{ MODKEY,			XK_F3,	   spawn,	   SHCMD("displayselect") },
 	{ MODKEY,			XK_F4,	   spawn,	   SHCMD("st -e pulsemixer; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY,           XK_F5,     xrdb,       {.v = NULL } },
+	{ MODKEY,           XK_F5,     spawn,      SHCMD("setbg") },
 	{ MODKEY,			XK_F9,	   spawn,	   SHCMD("dmenumount") },
 	{ MODKEY,			XK_F10,	   spawn,	   SHCMD("dmenuunmount") },
 	{ MODKEY,			XK_F12,	   spawn,	   SHCMD("youtubedl") },
 	{ MODKEY,			XK_F11,	   spawn,	   SHCMD("st -e nmtui") },
+	{ MODKEY,           XK_Print,  spawn,      SHCMD("flameshot") },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
