@@ -44,6 +44,7 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
 #include "fibonacci.c"
+#include "gaplessgrid.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
@@ -55,6 +56,7 @@ static const Layout layouts[] = {
 	{ ">M>",      centeredfloatingmaster },
 	{ "TTT",      bstack },
 	{ "===",      bstackhoriz },
+	{ "###",      gaplessgrid},
 };
 
 /* key definitions */
@@ -82,7 +84,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_o,      incnmaster,     {.i = +1 } },
-	{ MODKEY,	                XK_o,      incnmaster,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_o,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_space,  zoom,           {0} },
@@ -97,6 +99,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_i,      setlayout,      {.v = &layouts[6]} }, //centeredfloadtingmaster
 	{ MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[7]} }, //bstack
 	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[8]} }, //bstackhoriz
+	{ MODKEY|ShiftMask,             XK_p,      setlayout,      {.v = &layouts[9]} }, //gaplessgrid
 	/*{ MODKEY,                       XK_space,  setlayout,      {0} },*/
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_s,      togglesticky,   {0} },
