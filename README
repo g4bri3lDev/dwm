@@ -1,48 +1,85 @@
-dwm - dynamic window manager
-============================
-dwm is an extremely fast, small, and dynamic window manager for X.
+# DWM
+DWM is a very simplistic tiling window manager which is all you need for a linux desktop.
 
+## Keybindings
+### open + close
+   - meta + enter: open terminal
+   - meta + d: open dmenu
+   - meta + e: open emacs
+   - meta + r: open vifm
+   - meta + w: open browser
+   - meta + q: close window
+   
+### navigation
+   - meta + [0-9]: switch to tag
+   - meta + shift + [0-9]: move window to tag
+   
+   - meta + j: focus lower window in stack
+   - meta + k: focus higher window in stack
+   - meta + shift + j: move window down in stack
+   - meta + shift + k: move window up in stack
+   
+   - meta + space: swap window with master
+   - meta + o: move window to master stack
+   - meta + shift + o: move window from master stack
+   
+   - meta + comma: focus monitor - 1
+   - meta + period: focus monitor + 1
+   - meta + shift + comma: tag monitor - 1
+   - meta + shift + period: tag monitor + 1
+   
+### layouts
+   - meta + b: toggle bar
+   
+   - meta + t: tiling layout
+   - meta + shift + t: bstack horizontal layout
+   
+   - meta + y: spiral layout
+   - meta + shift + y: dwindle layout
+   
+   - meta + u: monocle layout
+   - meta + shift + u: bstack layout
+   
+   - meta + i: centeredmaster layout
+   - meta + shift + i: centeredfloatingmaster layout
+   
+   - meta + shift + p: gaplessgrid layout
+   - meta + shift + f: null layout
+   
+### gap manipulation
+   - meta + z: increase gaps
+   - meta + x: decrease gaps
+   - meta + shift + d: toggle gaps
+   
+### other functions
+   - meta + shift + q: quit dwm
+   - meta + shift + x: lock screen with slock
+   
+   - meta + F3: select display
+   - meta + F4: open pulsemixer
+   - meta + F5: select wallpaper
+   - meta + F9: mount drive
+   - meta + F10: unmount drive
+   - meta + F11: open nmtui
+   - meta + F12: open youtubedl dialog
 
-Requirements
-------------
-In order to build dwm you need the Xlib header files.
+## Patches
 
+   - activetagindicator
+   - bottomstack
+   - centeredmaster
+   - centered
+   - fibonacci
+   - gaplessgrid
+   - hide_vacant_tags
+   - noboarderfloatingfix
+   - pertag
+   - smartborders
+   - statuscmd-signal
+   - vanitygaps
+   - warp
+   - xrdb
 
-Installation
-------------
-Edit config.mk to match your local setup (dwm is installed into
-the /usr/local namespace by default).
+## Additional requirements 
 
-Afterwards enter the following command to build and install dwm (if
-necessary as root):
-
-    make clean install
-
-
-Running dwm
------------
-Add the following line to your .xinitrc to start dwm using startx:
-
-    exec dwm
-
-In order to connect dwm to a specific display, make sure that
-the DISPLAY environment variable is set correctly, e.g.:
-
-    DISPLAY=foo.bar:1 exec dwm
-
-(This will start dwm on display :1 of the host foo.bar.)
-
-In order to display status info in the bar, you can do something
-like this in your .xinitrc:
-
-    while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
-    do
-    	sleep 1
-    done &
-    exec dwm
-
-
-Configuration
--------------
-The configuration of dwm is done by creating a custom config.h
-and (re)compiling the source code.
+   > libxft-bgra
